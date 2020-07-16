@@ -42,5 +42,4 @@ public class Result implements Serializable {
         return this;
     }
 
-
 }

@@ -4,7 +4,11 @@ import cn.edu.gues.mjzblog.common.Result;
 import cn.edu.gues.mjzblog.common.utils.ValidationUtil;
 import cn.edu.gues.mjzblog.entity.User;
 import cn.edu.gues.mjzblog.service.UserService;
+import cn.hutool.core.util.StrUtil;
+import cn.hutool.crypto.SecureUtil;
 import com.google.code.kaptcha.Producer;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -53,9 +57,27 @@ public class AuthController extends BaseController{
 
     @ResponseBody
     @PostMapping("/login")
-    public String doLogin(){
+    public Result doLogin(String email,String password){
+        if(StrUtil.isEmpty(email) || StrUtil.isBlank(password)) {
+            return Result.fail("邮箱或密码不能为空");
+        }
 
-        return "/auth/login";
+        UsernamePasswordToken token = new UsernamePasswordToken(email, SecureUtil.md5(password));
+        try {
+            SecurityUtils.getSubject().login(token);
+        } catch (AuthenticationException e) {
+            if (e instanceof UnknownAccountException) {
+                return Result.fail("用户不存在");
+            } else if (e instanceof LockedAccountException) {
+                return Result.fail("用户被禁用");
+            } else if (e instanceof IncorrectCredentialsException) {
+                return Result.fail("密码错误");
+            } else {
+                return Result.fail("用户认证失败");
+            }
+        }
+
+        return Result.success().action("/");
     }
 
     @GetMapping("/register")
