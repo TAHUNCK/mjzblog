@@ -3,13 +3,17 @@ package cn.edu.gues.mjzblog.entity;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.time.LocalDateTime;
+import java.util.Date;
+
 import cn.edu.gues.mjzblog.entity.BaseEntity;
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.experimental.Accessors;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author CK
@@ -17,6 +21,8 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
+@Accessors(chain = true)
+@TableName("category")
 public class Category extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
@@ -72,9 +78,9 @@ public class Category extends BaseEntity {
     /**
      * 创建日期
      */
-    private LocalDateTime created;
+    private Date created;
 
-    private LocalDateTime modified;
+    private Date modified;
 
     private Integer status;
 

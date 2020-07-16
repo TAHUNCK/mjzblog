@@ -9,19 +9,21 @@
         <meta name="description" content="Fly社区是模块化前端UI框架Layui的官网社区，致力于为web开发提供强劲动力">
         <link rel="stylesheet" href="../static/layui/css/layui.css">
         <link rel="stylesheet" href="../static/css/global.css">
+        <script src="../static/layui/layui.js"></script>
+        <script src="../static/js/jquery.min.js"></script>
     </head>
     <body>
 
-    <#include "header.ftl"/>
+    <#include "/public/common.ftl"/>
+    <#include "/public/header.ftl"/>
 
     <#--将模板插入到此处-->
     <#nested >
 
-    <#include "footer.ftl"/>
+    <#include "/public/footer.ftl"/>
 
-    <script src="../static/layui/layui.js"></script>
     <script>
-        layui.cache.page = '';
+        //layui.cache.page = '';
         layui.cache.user = {
             username: '游客'
             , uid: -1
@@ -36,9 +38,6 @@
             fly: 'index'
         }).use('fly');
     </script>
-
-    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-        document.write(unescape("%3Cspan id='cnzz_stat_icon_30088308'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "w.cnzz.com/c.php%3Fid%3D30088308' type='text/javascript'%3E%3C/script%3E"));</script>
 
     </body>
     </html>

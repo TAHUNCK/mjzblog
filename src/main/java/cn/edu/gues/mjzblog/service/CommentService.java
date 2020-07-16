@@ -1,6 +1,9 @@
 package cn.edu.gues.mjzblog.service;
 
 import cn.edu.gues.mjzblog.entity.Comment;
+import cn.edu.gues.mjzblog.vo.CommentVo;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -13,4 +16,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface CommentService extends IService<Comment> {
 
+    IPage<CommentVo> paing(Page page, Long postId, Long userId, String order);
 }

@@ -1,13 +1,17 @@
 package cn.edu.gues.mjzblog.entity;
 
 import java.time.LocalDateTime;
+import java.util.Date;
+
 import cn.edu.gues.mjzblog.entity.BaseEntity;
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.experimental.Accessors;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author CK
@@ -15,6 +19,8 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
+@Accessors(chain = true)
+@TableName("user_action")
 public class UserAction extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
@@ -46,9 +52,9 @@ public class UserAction extends BaseEntity {
      */
     private String commentId;
 
-    private LocalDateTime created;
+    private Date created;
 
-    private LocalDateTime modified;
+    private Date modified;
 
 
 }

@@ -2,14 +2,18 @@ package cn.edu.gues.mjzblog.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
-import java.time.LocalDateTime;
-import cn.edu.gues.mjzblog.entity.BaseEntity;
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.experimental.Accessors;
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import java.util.Date;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author CK
@@ -17,6 +21,8 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
+@Accessors(chain = true)
+@TableName("user")
 public class User extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
@@ -30,16 +36,20 @@ public class User extends BaseEntity {
     /**
      * 昵称
      */
+    @NotBlank(message = "用户名不能为空")
     private String username;
 
     /**
      * 密码
      */
+    @NotBlank(message = "密码名不能为空")
     private String password;
 
     /**
      * 邮件
      */
+    @Email
+    @NotBlank(message = "邮箱不能为空")
     private String email;
 
     /**
@@ -75,7 +85,7 @@ public class User extends BaseEntity {
     /**
      * 生日
      */
-    private LocalDateTime birthday;
+    private Date birthday;
 
     /**
      * 头像
@@ -100,17 +110,17 @@ public class User extends BaseEntity {
     /**
      * 最后的登陆时间
      */
-    private LocalDateTime lasted;
+    private Date lasted;
 
     /**
      * 创建日期
      */
-    private LocalDateTime created;
+    private Date created;
 
     /**
      * 最后修改时间
      */
-    private LocalDateTime modified;
+    private Date modified;
 
 
 }

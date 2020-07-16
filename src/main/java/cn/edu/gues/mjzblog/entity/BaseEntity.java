@@ -6,4 +6,5 @@ package cn.edu.gues.mjzblog.entity;
  * @date 2020/7/15 0:35
  */
 public class BaseEntity {
+
 }

@@ -19,13 +19,13 @@
 
             <!-- 未登入的状态 -->
             <li class="layui-nav-item">
-                <a class="iconfont icon-touxiang layui-hide-xs" href="user/login.html"></a>
+                <a class="iconfont icon-touxiang layui-hide-xs" href="/login"></a>
             </li>
             <li class="layui-nav-item">
-                <a href="user/login.html">登入</a>
+                <a href="/login">登录</a>
             </li>
             <li class="layui-nav-item">
-                <a href="user/reg.html">注册</a>
+                <a href="/register">注册</a>
             </li>
             <li class="layui-nav-item layui-hide-xs">
                 <a href="/app/qq/" onclick="layer.msg('正在通过QQ登入', {icon:16, shade: 0.1, time:0})" title="QQ登入"

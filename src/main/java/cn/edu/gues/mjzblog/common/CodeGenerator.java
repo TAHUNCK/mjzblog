@@ -1,4 +1,4 @@
-package cn.edu.gues.mjzblog;
+package cn.edu.gues.mjzblog.common;
 
 import com.baomidou.mybatisplus.core.exceptions.MybatisPlusException;
 import com.baomidou.mybatisplus.core.toolkit.StringPool;

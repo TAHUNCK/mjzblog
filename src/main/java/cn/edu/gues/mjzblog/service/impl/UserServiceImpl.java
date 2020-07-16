@@ -1,5 +1,6 @@
 package cn.edu.gues.mjzblog.service.impl;
 
+import cn.edu.gues.mjzblog.common.Result;
 import cn.edu.gues.mjzblog.entity.User;
 import cn.edu.gues.mjzblog.mapper.UserMapper;
 import cn.edu.gues.mjzblog.service.UserService;
@@ -17,4 +18,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
 
+    @Override
+    public Result register(User user) {
+        return null;
+    }
 }

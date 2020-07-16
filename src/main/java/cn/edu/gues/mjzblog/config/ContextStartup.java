@@ -3,6 +3,7 @@ package cn.edu.gues.mjzblog.config;
 
 import cn.edu.gues.mjzblog.entity.Category;
 import cn.edu.gues.mjzblog.service.CategoryService;
+import cn.edu.gues.mjzblog.service.PostService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -26,11 +27,16 @@ public class ContextStartup implements ApplicationRunner, ServletContextAware {
 
     ServletContext servletContext;
 
+    @Autowired
+    PostService postService;
+
     @Override
     public void run(ApplicationArguments args) {
         List<Category> category = categoryService.list(new QueryWrapper<Category>()
                 .eq("status", 0));
         servletContext.setAttribute("categoryS",category);
+
+        postService.initWeekRank();
     }
 
     @Override
