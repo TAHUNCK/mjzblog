@@ -20,13 +20,12 @@ public class AccountRealm extends AuthorizingRealm{
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
         AccountProfile profile = (AccountProfile) principals.getPrimaryPrincipal();
 
-        // 给id为6的admin赋予admin角色
-        if(profile.getId() == 6) {
+        // 给id为1的admin赋予admin角色
+        if(profile.getId() == 1) {
             SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
             info.addRole("admin");
             return info;
         }
-
         return null;
     }
 

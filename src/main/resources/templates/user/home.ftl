@@ -2,9 +2,9 @@
 
 <@layout "我的主页">
 
-  <div class="fly-home fly-panel" style="background-image: url();">
+  <div class="fly-home fly-panel" style="">
     <img src="${user.avatar}" alt="${user.username}">
-    <i class="iconfont icon-renzheng" title="Fly社区认证"></i>
+    <i class="iconfont icon-renzheng" title="社区认证"></i>
     <h1>
       ${user.username}
       <i class="iconfont icon-nan"></i>
@@ -27,8 +27,8 @@
     <p class="fly-home-sign">（${user.sign!'这个人好懒，什么都没留下！'}）</p>
 
     <div class="fly-sns" data-user="">
-      <a href="javascript:;" class="layui-btn layui-btn-primary fly-imActive" data-type="addFriend">加为好友</a>
-      <a href="javascript:;" class="layui-btn layui-btn-normal fly-imActive" data-type="chat">发起会话</a>
+      <a href="javascript:;" class="layui-btn layui-btn-disabled fly-imActive" data-type="addFriend">加为好友</a>
+      <a href="javascript:;" class="layui-btn layui-btn-disabled fly-imActive" data-type="chat">发起会话</a>
     </div>
 
   </div>
@@ -49,7 +49,7 @@
             </#list>
             <#if !posts>
               <div class="fly-none" style="min-height: 50px; padding:30px 0; height:auto;">
-                <i style="font-size:14px;">没有发表任何求解</i>
+                <i style="font-size:14px;">没有发表任何问题</i>
               </div>
             </#if>
           </ul>

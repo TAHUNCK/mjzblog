@@ -1,8 +1,10 @@
-package cn.edu.gues.mjzblog.vo;
+package cn.edu.gues.mjzblog.entity.vo;
 
 import cn.edu.gues.mjzblog.entity.Comment;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 public class CommentVo extends Comment {
 

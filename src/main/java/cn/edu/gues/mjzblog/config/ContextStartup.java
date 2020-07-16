@@ -34,7 +34,7 @@ public class ContextStartup implements ApplicationRunner, ServletContextAware {
     public void run(ApplicationArguments args) {
         List<Category> category = categoryService.list(new QueryWrapper<Category>()
                 .eq("status", 0));
-        servletContext.setAttribute("categoryS",category);
+        servletContext.setAttribute("categorys",category);
 
         postService.initWeekRank();
     }

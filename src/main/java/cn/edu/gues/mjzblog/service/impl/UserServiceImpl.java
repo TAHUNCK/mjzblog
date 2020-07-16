@@ -40,7 +40,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         userTmp.setUsername(user.getUsername());
         userTmp.setPassword(SecureUtil.md5(user.getPassword()));
         userTmp.setEmail(user.getEmail());
-        userTmp.setAvatar("../static/images/avatar/default.png");
+        userTmp.setAvatar("/images/avatar/default.png");
         userTmp.setCreated(new Date());
         userTmp.setPoint(0);
         userTmp.setVipLevel(0);

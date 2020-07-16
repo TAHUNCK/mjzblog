@@ -1,7 +1,7 @@
 package cn.edu.gues.mjzblog.mapper;
 
 import cn.edu.gues.mjzblog.entity.Comment;
-import cn.edu.gues.mjzblog.vo.CommentVo;
+import cn.edu.gues.mjzblog.entity.vo.CommentVo;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;

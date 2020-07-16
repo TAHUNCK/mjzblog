@@ -3,7 +3,7 @@
  @Name: 求解板块
 
  */
- 
+
 layui.define('fly', function(exports){
 
   var $ = layui.jquery;
@@ -12,7 +12,7 @@ layui.define('fly', function(exports){
   var laytpl = layui.laytpl;
   var form = layui.form;
   var fly = layui.fly;
-  
+
   var gather = {}, dom = {
     jieda: $('#jieda')
     ,content: $('#L_content')
@@ -64,7 +64,7 @@ layui.define('fly', function(exports){
       required[0].value = '';
       dom.jieda.find('.fly-none').remove();
       dom.jieda.append(html);
-      
+
       var count = dom.jiedaCount.text()|0;
       dom.jiedaCount.html(++count);
     });
@@ -74,7 +74,7 @@ layui.define('fly', function(exports){
   gather.jieAdmin = {
     //删求解
     del: function(div){
-      layer.confirm('确认删除该求解么？', function(index){
+      layer.confirm('确认删除该问题么？', function(index){
         layer.close(index);
         fly.json('/post/delete/', {
           id: div.data('id')
@@ -87,7 +87,7 @@ layui.define('fly', function(exports){
         });
       });
     }
-    
+
     //设置置顶、状态
     ,set: function(div){
       var othis = $(this);
@@ -215,13 +215,13 @@ layui.define('fly', function(exports){
             li.remove();
             //如果删除了最佳答案
             if(li.hasClass('jieda-daan')){
-              $('.jie-status').removeClass('jie-status-ok').text('求解中');
+              $('.jie-status').removeClass('jie-status-ok').text('等待中');
             }
           } else {
             layer.msg(res.msg);
           }
         });
-      });    
+      });
     }
   };
 

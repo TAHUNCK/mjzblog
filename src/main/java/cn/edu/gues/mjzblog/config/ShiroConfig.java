@@ -37,7 +37,7 @@ public class ShiroConfig {
         filterFactoryBean.setLoginUrl("/login");
         filterFactoryBean.setSuccessUrl("/user/center");
         // 配置未授权跳转页面
-        filterFactoryBean.setUnauthorizedUrl("/error/403");
+        filterFactoryBean.setUnauthorizedUrl("/error");
 
         filterFactoryBean.setFilters(MapUtil.of("auth", authFilter()));
 
@@ -52,7 +52,7 @@ public class ShiroConfig {
         hashMap.put("/user/public", "auth");
         hashMap.put("/user/collection", "auth");
         hashMap.put("/user/mess", "auth");
-        hashMap.put("/msg/remove/", "auth");
+        hashMap.put("/message/remove/", "auth");
         hashMap.put("/message/nums/", "auth");
 
         hashMap.put("/collection/remove/", "auth");
@@ -64,7 +64,6 @@ public class ShiroConfig {
         hashMap.put("/post/delete", "auth");
         hashMap.put("/post/reply/", "auth");
 
-        hashMap.put("/websocket", "anon");
         hashMap.put("/login", "anon");
         filterFactoryBean.setFilterChainDefinitionMap(hashMap);
 
@@ -72,6 +71,10 @@ public class ShiroConfig {
 
     }
 
+    /**
+     * 引入自定义过滤器
+     * @return 过滤器实例
+     */
     @Bean
     public AuthFilter authFilter() {
         return new AuthFilter();

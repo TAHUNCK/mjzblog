@@ -4,7 +4,7 @@ import cn.edu.gues.mjzblog.common.utils.RedisUtil;
 import cn.edu.gues.mjzblog.entity.Post;
 import cn.edu.gues.mjzblog.mapper.PostMapper;
 import cn.edu.gues.mjzblog.service.PostService;
-import cn.edu.gues.mjzblog.vo.PostVo;
+import cn.edu.gues.mjzblog.entity.vo.PostVo;
 import cn.hutool.core.date.DatePattern;
 import cn.hutool.core.date.DateUnit;
 import cn.hutool.core.date.DateUtil;

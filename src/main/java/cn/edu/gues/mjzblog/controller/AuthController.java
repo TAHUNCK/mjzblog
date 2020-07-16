@@ -3,7 +3,6 @@ package cn.edu.gues.mjzblog.controller;
 import cn.edu.gues.mjzblog.common.Result;
 import cn.edu.gues.mjzblog.common.utils.ValidationUtil;
 import cn.edu.gues.mjzblog.entity.User;
-import cn.edu.gues.mjzblog.service.UserService;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.crypto.SecureUtil;
 import com.google.code.kaptcha.Producer;
@@ -74,7 +73,6 @@ public class AuthController extends BaseController{
                 return Result.fail("用户认证失败");
             }
         }
-
         return Result.success().action("/");
     }
 

@@ -2,14 +2,12 @@ package cn.edu.gues.mjzblog.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
-import java.time.LocalDateTime;
-import java.util.Date;
-
-import cn.edu.gues.mjzblog.entity.BaseEntity;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
+
+import java.util.Date;
 
 /**
  * <p>
@@ -53,7 +51,7 @@ public class UserMessage extends BaseEntity {
     private String content;
 
     /**
-     * 消息类型
+     * 消息类型 0系统消息 1评论文章 2评论评论
      */
     private Integer type;
 

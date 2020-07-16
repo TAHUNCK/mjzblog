@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.edu.gues.mjzblog.mapper.CommentMapper">
 
-    <select id="selectComments" resultType="cn.edu.gues.mjzblog.vo.CommentVo">
+    <select id="selectComments" resultType="cn.edu.gues.mjzblog.entity.vo.CommentVo">
         SELECT
             c.*,
 

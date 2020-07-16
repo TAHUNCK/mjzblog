@@ -1,7 +1,7 @@
 package cn.edu.gues.mjzblog.service;
 
 import cn.edu.gues.mjzblog.entity.Comment;
-import cn.edu.gues.mjzblog.vo.CommentVo;
+import cn.edu.gues.mjzblog.entity.vo.CommentVo;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;

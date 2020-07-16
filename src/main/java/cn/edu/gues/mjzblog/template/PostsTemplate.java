@@ -3,7 +3,7 @@ package cn.edu.gues.mjzblog.template;
 import cn.edu.gues.mjzblog.common.templates.DirectiveHandler;
 import cn.edu.gues.mjzblog.common.templates.TemplateDirective;
 import cn.edu.gues.mjzblog.service.PostService;
-import cn.edu.gues.mjzblog.vo.PostVo;
+import cn.edu.gues.mjzblog.entity.vo.PostVo;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.springframework.beans.factory.annotation.Autowired;

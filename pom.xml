@@ -75,11 +75,11 @@
         </dependency>
 
         <!-- sql分析器 -->
-        <dependency>
-            <groupId>p6spy</groupId>
-            <artifactId>p6spy</artifactId>
-            <version>3.8.6</version>
-        </dependency>
+        <!--<dependency>-->
+        <!--    <groupId>p6spy</groupId>-->
+        <!--    <artifactId>p6spy</artifactId>-->
+        <!--    <version>3.8.6</version>-->
+        <!--</dependency>-->
 
         <!-- commons-lang3 -->
         <dependency>
@@ -114,36 +114,10 @@
             <version>0.1</version>
         </dependency>
 
-        <!--websocket-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-websocket</artifactId>
-        </dependency>
-
-        <!-- es 6.4.3版本 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-elasticsearch</artifactId><!--netty-->
-            <version>2.1.1.RELEASE</version>
-        </dependency>
-
-        <!--整合rabbitmq-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-amqp</artifactId>
-        </dependency>
-
         <dependency>
             <groupId>org.modelmapper</groupId>
             <artifactId>modelmapper</artifactId>
             <version>1.1.0</version>
-        </dependency>
-
-        <!-- tio -->
-        <dependency>
-            <groupId>org.t-io</groupId>
-            <artifactId>tio-websocket-server</artifactId>
-            <version>3.2.5.v20190101-RELEASE</version>
         </dependency>
 
     </dependencies>
