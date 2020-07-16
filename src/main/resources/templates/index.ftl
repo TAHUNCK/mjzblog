@@ -1,6 +1,6 @@
 <#include "public/layout.ftl"/>
 
-<@layout "首页">
+<@layout "买橘子">
 
     <#include "public/header-panel.ftl"/>
 

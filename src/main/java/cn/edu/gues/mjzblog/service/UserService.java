@@ -1,6 +1,7 @@
 package cn.edu.gues.mjzblog.service;
 
 import cn.edu.gues.mjzblog.common.Result;
+import cn.edu.gues.mjzblog.config.shiro.AccountProfile;
 import cn.edu.gues.mjzblog.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -15,4 +16,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface UserService extends IService<User> {
 
     Result register(User user);
+
+    AccountProfile login(String username, String password);
 }

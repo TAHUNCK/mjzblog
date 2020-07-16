@@ -1,7 +1,9 @@
 package cn.edu.gues.mjzblog.controller;
 
+import cn.edu.gues.mjzblog.config.shiro.AccountProfile;
 import cn.edu.gues.mjzblog.service.CommentService;
 import cn.edu.gues.mjzblog.service.PostService;
+import cn.edu.gues.mjzblog.service.UserService;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,12 +26,23 @@ public class BaseController {
     PostService postService;
 
     @Autowired
+    UserService userService;
+
+    @Autowired
     CommentService commentService;
 
     public Page getPage() {
         int pn = ServletRequestUtils.getIntParameter(request, "pn", 1);
         int size = ServletRequestUtils.getIntParameter(request, "size", 2);
         return new Page(pn, size);
+    }
+
+    protected AccountProfile getProfile() {
+        return (AccountProfile)SecurityUtils.getSubject().getPrincipal();
+    }
+
+    protected Long getProfileId() {
+        return getProfile().getId();
     }
 
 }
