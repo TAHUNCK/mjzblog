@@ -97,7 +97,7 @@ layui.define('fly', function(exports){
         ,field: othis.attr('field')
       }, function(res){
         if(res.status === 0){
-          location.reload();
+          location.replace("/");
         }
       });
     }

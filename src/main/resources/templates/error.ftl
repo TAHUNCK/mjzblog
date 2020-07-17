@@ -35,7 +35,7 @@
     <div class="fly-panel">
         <div class="fly-none">
             <h2><i class="iconfont icon-tishilian"></i></h2>
-            <p>${message}</p>
+            <p>${RequestParameters['message']}</p>
         </div>
     </div>
 </div>

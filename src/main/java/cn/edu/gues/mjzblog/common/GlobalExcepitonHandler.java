@@ -33,7 +33,7 @@ public class GlobalExcepitonHandler {
         }
 
         // web处理
-        ModelAndView modelAndView = new ModelAndView("error");
+        ModelAndView modelAndView = new ModelAndView("redirect:/error");
         modelAndView.addObject("message", e.getMessage());
         return modelAndView;
     }
