@@ -9,6 +9,7 @@ import lombok.experimental.Accessors;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 /**
@@ -42,7 +43,7 @@ public class User extends BaseEntity {
     /**
      * 密码
      */
-    @NotBlank(message = "密码不能为空")
+    @Size(min = 6,max = 16,message = "密码太长或太短")
     private String password;
 
     /**

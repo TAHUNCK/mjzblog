@@ -19,6 +19,17 @@ spring:
     host: 39.99.156.245
     port: 6379
     password:
+  data:
+    elasticsearch:
+      cluster-name: docker-cluster
+      cluster-nodes: 39.99.156.245:9300
+      repositories:
+        enabled: true
+  rabbitmq:
+    username: root
+    password: admin
+    host: 39.99.156.245
+    port: 5672
 mybatis-plus:
   mapper-locations: classpath*:/mapper/**Mapper.xml
 file:

@@ -2,9 +2,11 @@ package cn.edu.gues.mjzblog.controller;
 
 import cn.edu.gues.mjzblog.common.Result;
 import cn.edu.gues.mjzblog.common.utils.ValidationUtil;
+import cn.edu.gues.mjzblog.config.RabbitConfig;
 import cn.edu.gues.mjzblog.entity.*;
 import cn.edu.gues.mjzblog.entity.vo.CommentVo;
 import cn.edu.gues.mjzblog.entity.vo.PostVo;
+import cn.edu.gues.mjzblog.search.mq.PostMqIndexMessage;
 import cn.hutool.core.map.MapUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
@@ -140,6 +142,11 @@ public class PostController extends BaseController{
             tempPost.setCategoryId(post.getCategoryId());
             postService.updateById(tempPost);
         }
+
+        // 通知消息给mq，告知更新或添加
+        amqpTemplate.convertAndSend(RabbitConfig.es_exchage, RabbitConfig.es_bind_key,
+                new PostMqIndexMessage(post.getId(), PostMqIndexMessage.CREATE_OR_UPDATE));
+
         return Result.success().action("/post/" + post.getId());
     }
 

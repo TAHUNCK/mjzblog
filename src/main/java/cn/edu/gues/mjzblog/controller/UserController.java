@@ -113,7 +113,9 @@ public class UserController extends BaseController{
         if(!pass.equals(repass)) {
             return Result.fail("两次密码不相同");
         }
-
+        if(pass.length()<6||pass.length()>16){
+            return Result.fail("密码太长或太短");
+        }
         User user = userService.getById(getProfileId());
 
         String nowPassMd5 = SecureUtil.md5(nowpass);

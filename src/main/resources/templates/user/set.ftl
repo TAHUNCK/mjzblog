@@ -21,6 +21,9 @@
           <li class="layui-this" lay-id="info">我的资料</li>
           <li lay-id="avatar">头像</li>
           <li lay-id="pass">密码</li>
+          <@shiro.hasRole name="admin">
+            <li lay-id="es">同步ES</li>
+          </@shiro.hasRole>
         </ul>
         <div class="layui-tab-content" style="padding: 20px 0;">
           <div class="layui-form layui-form-pane layui-tab-item layui-show">
@@ -30,7 +33,7 @@
                 <div class="layui-input-inline">
                   <input type="text" id="L_email" name="email" required lay-verify="email" autocomplete="off" value="${user.email}" class="layui-input" readonly>
                 </div>
-                <div class="layui-form-mid layui-word-aux">如果您在邮箱已激活的情况下，变更了邮箱，需联系开发：<a href="#" style="font-size: 12px; color: #4f99cf;">
+                <div class="layui-form-mid layui-word-aux">如果您在邮箱已激活的情况下，需要变更邮箱邮箱，请联系开发者：<a href="#" style="font-size: 12px; color: #4f99cf;">
                     <a href="tencent://message/?uin=1790286512"><img src="http://wpa.qq.com/pa?p=1:1790286512:4" border=”0″>不如守中</a>
                   </a></div>
               </div>
@@ -98,6 +101,13 @@
             </form>
           </div>
 
+          <@shiro.hasRole name="admin">
+            <div class="layui-form layui-form-pane layui-tab-item">
+              <form action="/admin/initEsData" method="post">
+                <button class="layui-btn" key="set-mine" lay-filter="*" lay-submit alert="true">同步ES数据</button>
+              </form>
+            </div>
+          </@shiro.hasRole>
         </div>
 
       </div>
