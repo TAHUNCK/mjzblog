@@ -1,7 +1,7 @@
 <div class="fly-header layui-bg-black">
     <div class="layui-container">
         <a class="fly-logo" href="/">
-            <img src="/images/logo.png" alt="MJZ" style="height: 41px;">
+            <img src="/images/logo.png" alt="MJZ" style="height: 60px;margin-top: -10px;">
         </a>
         <ul class="layui-nav fly-nav layui-hide-xs">
             <li class="layui-nav-item layui-this">

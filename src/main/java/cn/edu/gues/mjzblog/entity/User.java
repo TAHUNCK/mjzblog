@@ -42,7 +42,7 @@ public class User extends BaseEntity {
     /**
      * 密码
      */
-    @NotBlank(message = "密码名不能为空")
+    @NotBlank(message = "密码不能为空")
     private String password;
 
     /**

@@ -21,7 +21,6 @@
           <li class="layui-this" lay-id="info">我的资料</li>
           <li lay-id="avatar">头像</li>
           <li lay-id="pass">密码</li>
-          <li lay-id="bind">帐号绑定</li>
         </ul>
         <div class="layui-tab-content" style="padding: 20px 0;">
           <div class="layui-form layui-form-pane layui-tab-item layui-show">
@@ -31,7 +30,9 @@
                 <div class="layui-input-inline">
                   <input type="text" id="L_email" name="email" required lay-verify="email" autocomplete="off" value="${user.email}" class="layui-input" readonly>
                 </div>
-                <div class="layui-form-mid layui-word-aux">如果您在邮箱已激活的情况下，变更了邮箱，需<a href="#" style="font-size: 12px; color: #4f99cf;">重新验证邮箱</a>。</div>
+                <div class="layui-form-mid layui-word-aux">如果您在邮箱已激活的情况下，变更了邮箱，需联系开发：<a href="#" style="font-size: 12px; color: #4f99cf;">
+                    <a href="tencent://message/?uin=1790286512"><img src="http://wpa.qq.com/pa?p=1:1790286512:4" border=”0″>不如守中</a>
+                  </a></div>
               </div>
               <div class="layui-form-item">
                 <label for="L_username" class="layui-form-label">昵称</label>
@@ -81,14 +82,14 @@
               <div class="layui-form-item">
                 <label for="L_pass" class="layui-form-label">新密码</label>
                 <div class="layui-input-inline">
-                  <input type="password" id="L_pass" name="pass" required lay-verify="required" autocomplete="off" class="layui-input">
+                  <input type="password" id="L_pass" name="pass" required lay-verify="required" autocomplete="off" class="layui-input" pattern="[0-9]{6,16}">
                 </div>
                 <div class="layui-form-mid layui-word-aux">6到16个字符</div>
               </div>
               <div class="layui-form-item">
                 <label for="L_repass" class="layui-form-label">确认密码</label>
                 <div class="layui-input-inline">
-                  <input type="password" id="L_repass" name="repass" required lay-verify="required" autocomplete="off" class="layui-input">
+                  <input type="password" id="L_repass" name="repass" required lay-verify="required" autocomplete="off" class="layui-input" pattern="[0-9]{6,16}">
                 </div>
               </div>
               <div class="layui-form-item">
@@ -97,26 +98,6 @@
             </form>
           </div>
 
-          <div class="layui-form layui-form-pane layui-tab-item">
-            <ul class="app-bind">
-              <li class="fly-msg app-havebind">
-                <i class="iconfont icon-qq"></i>
-                <span>已成功绑定，您可以使用QQ帐号直接登录Fly社区，当然，您也可以</span>
-                <a href="javascript:;" class="acc-unbind" type="qq_id">解除绑定</a>
-
-                <!-- <a href="" onclick="layer.msg('正在绑定微博QQ', {icon:16, shade: 0.1, time:0})" class="acc-bind" type="qq_id">立即绑定</a>
-                <span>，即可使用QQ帐号登录Fly社区</span> -->
-              </li>
-              <li class="fly-msg">
-                <i class="iconfont icon-weibo"></i>
-                <!-- <span>已成功绑定，您可以使用微博直接登录Fly社区，当然，您也可以</span>
-                <a href="javascript:;" class="acc-unbind" type="weibo_id">解除绑定</a> -->
-
-                <a href="" class="acc-weibo" type="weibo_id"  onclick="layer.msg('正在绑定微博', {icon:16, shade: 0.1, time:0})" >立即绑定</a>
-                <span>，即可使用微博帐号登录Fly社区</span>
-              </li>
-            </ul>
-          </div>
         </div>
 
       </div>
